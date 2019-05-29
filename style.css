@@ -6,18 +6,18 @@
 
 html {
     color: #222;
-    background-color: #fcfeff;
+    background-color: #fefefe;
     font-family: 'Open Sans', sans-serif;
 }
 
 .outer-container {
-    margin: 3em auto;
+    margin: 5em auto;
     padding: 1em;
     display: grid;
     max-width: 1000px;
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, .3);
-    background-color: #fefefe;
+    background-color: #fff;
 
     animation: slideIn 500ms ease-in-out forwards;
 }
@@ -80,7 +80,7 @@ html {
     bottom: -4px;
     width: 100%;
     height: 4px;
-    background-color: orange;
+    background-color: #049b01;
     transform: scaleX(0);
     transform-origin: 0%;
     transition: transform 205ms ease-in-out;
@@ -92,7 +92,7 @@ html {
 
 aside {
     grid-column: 1 / 2;
-    background-color: lightblue;
+    background-color: #c6deff;
     
     display: flex;
     flex-direction: column;
@@ -119,8 +119,7 @@ main h2 {
 
 main {
     grid-column: 2 / 3;
-    background-color: lightcoral;
-
+    background: linear-gradient(to right, #ff8851, #f78471);
 }
 
 main h2 {
@@ -138,6 +137,7 @@ label span {
     display: block;
     font-weight: bold;
     font-size: 1.25rem;
+    margin-bottom: .3em;
 }
 
 section input {
@@ -154,8 +154,58 @@ section button {
     cursor: pointer;
     text-transform: uppercase;
     outline: none;
-    background-color: orange;
-    border: 1px solid #fff;
+    background-color: #049b01;
+    border: 2px solid #fff;
+    color: #fff;
     border-radius: 4px;
     font-size: 1.1rem;
+}
+
+/* Styling for invalid fields */
+
+input:invalid {
+    box-shadow: 0 0 3px 3px #ef1c1c;
+}
+
+input:focus:invalid {
+    outline: none;
+}
+
+/* Error message styling */
+.error {
+    color: #d60000;
+    background-color: #ddd;
+}
+
+.error.active {
+    padding: .1em .5em;
+}
+
+/* Mobile layout */
+@media screen and (max-width: 47em) {
+    .outer-container {
+        margin: 0 auto;
+        box-shadow: none;
+    }
+
+    .outer-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .outer-container ul .main-links {
+        font-size: .96rem;
+    }
+
+    main form h2 {
+        font-size: 1.3rem;
+    }
+
+    label span {
+        font-size: 1rem;
+    }
+
+    aside,
+    main {
+        grid-column: 1 / 3;
+    }
 }
